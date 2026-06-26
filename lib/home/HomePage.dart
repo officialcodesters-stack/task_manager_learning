@@ -35,7 +35,12 @@ class HomePage extends GetView<HomeController> {
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(controller.tasks[index]),
-              trailing: IconButton(onPressed: () {controller.deleteTask(index);}, icon: Icon(Icons.delete)),
+              trailing: IconButton(
+                onPressed: () {
+                  controller.deleteTask(index);
+                },
+                icon: Icon(Icons.delete),
+              ),
             );
           },
         ),
