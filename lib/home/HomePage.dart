@@ -13,33 +13,33 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(title: const Text("My Tasks")),
 
-      // body: Obx(
-      //   () => ListView.builder(
-      //     itemCount: controller.tasks.length,
-      //     itemBuilder: (context, index) {
-      //       return ListTile(
-      //         title: Text(controller.tasks[index]),
-      //         trailing: IconButton(
-      //           onPressed: () {
-      //             controller.deleteTask(index);
-      //           },
-      //           icon: Icon(Icons.delete),
-      //         ),
-      //       );
-      //     },
-      //   ),
-      // ),
       body: Obx(
         () => ListView.builder(
           itemCount: controller.tasks.length,
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(controller.tasks[index]),
-              trailing: IconButton(onPressed: () {controller.deleteTask(index);}, icon: Icon(Icons.delete)),
+              trailing: IconButton(
+                onPressed: () {
+                  controller.deleteTask(index);
+                },
+                icon: Icon(Icons.delete),
+              ),
             );
           },
         ),
       ),
+      // body: Obx(
+      //   () => ListView.builder(
+      //     itemCount: controller.tasks.length,
+      //     itemBuilder: (context, index) {
+      //       return ListTile(
+      //         title: Text(controller.tasks[index]),
+      //         trailing: IconButton(onPressed: () {controller.deleteTask(index);}, icon: Icon(Icons.delete)),
+      //       );
+      //     },
+      //   ),
+      // ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
